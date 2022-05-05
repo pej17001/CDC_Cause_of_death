@@ -1,4 +1,5 @@
 # Data transformation
+For Q1 and Q3
 ```{r} 
 library(plyr)
 library(ggplot2)
@@ -11,3 +12,48 @@ df <- df1 %>%
   select(-c("Notes"))
 head(df)
 ```
+For the data record of the 2020 whole year, we downloaded it seperately and joint them by rbind. After that, we deleted the first column 'note' and droped the rows that contains NA. Then, we get a data set that can did futher analysis.
+
+
+For Q2 and Q4
+```{r, warning=FALSE}
+# Q2
+library(tidyverse)
+setwd("/Users/penny/Desktop/GR 5293")
+d <- read_tsv("Final Project Q2.txt",show_col_types = FALSE)
+
+data <- na.omit(d[,-1])
+data <- data.frame(data)
+df1 <- read_tsv("GR5923 Q2 2011-2015.txt", show_col_types = FALSE)
+df2 <- na.omit(df1[,-1])
+df2 <- data.frame(df2)
+
+data <- rbind(data, df2)
+# Select the variable we need
+data.2 <- data %>%
+  subset(.,select=c(Year, Cause.of.death,Gender,Deaths,Population))
+
+# Q4
+
+# install.packages("rpart.plot")
+library(rpart)
+library(rpart.plot)
+
+# Import data
+data4 <- read_tsv("Final Project Q4.txt", show_col_types = FALSE)
+data4 <- na.omit(data4[,-1])
+data4 <- data.frame(data4)
+
+# Inmort the data we use for decision tree
+data4d <- read_tsv("Final Project Q4 Full.txt",  show_col_types = FALSE)
+data4d <- na.omit(data4d[,-1])
+data4d <- data.frame(data4d)
+data4d<- na_if(data4d,"Not Applicable")
+table(data4d$Population)
+
+# Clean data
+data4e <- data4d %>% na.omit()
+```
+For the data in Q2, we downloaded this dataset from 2011 to 2020 timer period (two datasets merged), and the filters are cause of death, gender, year, and state. The state is specifically New York, and cause of death is ICD-10 Codes.
+
+Fot the data in Q4, we downloaded two datasets. First one "Final Project Q4.txt" only contains cause of death and it's death rate, which we used this dataset to find the top 1 causes of death. Then, we download the dataset "Final Project Q4 Full.txt" using filters cause of death, gender, census region, race,etc. We used the categorical variable from the filters to build the decision tree.
