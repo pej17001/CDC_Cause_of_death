@@ -9,4 +9,5 @@ df1<-rbind(data1,data2)
 df1 <-na.omit(df1)
 df <- df1 %>%
   select(-c("Notes"))
+head(df)
 ```
