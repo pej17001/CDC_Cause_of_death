@@ -74,8 +74,21 @@
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
 <li class="chapter" data-level="2" data-path="data-sources.html"><a href="data-sources.html"><i class="fa fa-check"></i><b>2</b> Data sources</a></li>
-<li class="chapter" data-level="3" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>3</b> Data transformation</a></li>
-<li class="chapter" data-level="4" data-path="missing-values.html"><a href="missing-values.html"><i class="fa fa-check"></i><b>4</b> Missing values</a></li>
+<li class="chapter" data-level="3" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>3</b> Data transformation</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="data-transformation.html"><a href="data-transformation.html#for-q1-and-q3"><i class="fa fa-check"></i><b>3.1</b> For Q1 and Q3</a></li>
+<li class="chapter" data-level="3.2" data-path="data-transformation.html"><a href="data-transformation.html#for-q2-and-q4"><i class="fa fa-check"></i><b>3.2</b> For Q2 and Q4</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="data-transformation.html"><a href="data-transformation.html#question-2"><i class="fa fa-check"></i><b>3.2.1</b> Question 2</a></li>
+<li class="chapter" data-level="3.2.2" data-path="data-transformation.html"><a href="data-transformation.html#question-4"><i class="fa fa-check"></i><b>3.2.2</b> Question 4</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="missing-values.html"><a href="missing-values.html"><i class="fa fa-check"></i><b>4</b> Missing values</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="missing-values.html"><a href="missing-values.html#for-q1-and-q3-1"><i class="fa fa-check"></i><b>4.1</b> For Q1 and Q3</a></li>
+<li class="chapter" data-level="4.2" data-path="missing-values.html"><a href="missing-values.html#for-q2"><i class="fa fa-check"></i><b>4.2</b> For Q2</a></li>
+<li class="chapter" data-level="4.3" data-path="missing-values.html"><a href="missing-values.html#for-q4"><i class="fa fa-check"></i><b>4.3</b> For Q4</a></li>
+</ul></li>
 <li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a>
 <ul>
 <li class="chapter" data-level="5.1" data-path="results.html"><a href="results.html#question-1-what-are-the-top-5-causes-of-death-in-our-mortality-dataset-compared-to-the-top-10-causes-of-death-online-or-in-common-sense"><i class="fa fa-check"></i><b>5.1</b> Question 1: What are the top 5 causes of death in our mortality dataset compared to the top 10 causes of death online or in common sense?</a></li>
@@ -114,18 +127,27 @@
             <section class="normal" id="section-">
 <div id="data-sources" class="section level1 hasAnchor" number="2">
 <h1><span class="header-section-number">Chapter 2</span> Data sources<a href="data-sources.html#data-sources" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p><a href="https://wonder.cdc.gov/wonder/help/ucd.html" class="uri">https://wonder.cdc.gov/wonder/help/ucd.html</a></p>
-<p>Location: HHS Regions, Census Regions, Census Divisions, State, County</p>
-<p>Age Groups: 10 year age groups, 5 year age groups, single-year age groups and infant age groupsRace: American Indian or Alaskan Native, Asian / Pacific Islander, Black or African American, White</p>
-<p>Hispanic Origin: Hispanic or Latino, Not Hispanic or Latino, Not stated</p>
-<p>Gender (Sex): Female, Male</p>
-<p>Year of death: 1999-2020</p>
-<p>Month of death: January through December</p>
-<p>Weekday of death: Sunday through Saturday, Unknown</p>
-<p>Autopsy performed: No, Yes, Unknown</p>
-<p>Place of Death: Medical Facility - Inpatient, Medical Facility - Outpatient or ER, Medical Facility - Dead on Arrival, Medical Facility - Status Unknown (years 1999-2002 only), Decedent’s home, Hospice Facility (years 2003 and later only), Nursing home/long term care, Other, Place of death unknown</p>
-<p>Cause of Death: underlying cause of death - ICD-10 codes, Drug/Alcohol Induced Causes, Injury Intent and Mechanism groups, 113 Selected Causes, 130 Selected Causes (for infants), 15 Leading Causes</p>
-<p>Urbanization: classifies population density and other factors at the county level - pick between the 2006 or the 2013 NCHS Urban-Rural Classification Scheme for Counties</p>
+<p>Both of us, Peilin Jing and Jing Wang, are responsible for collecting data, since our problems need different filters on CDC website.</p>
+<p>Data source URL: <a href="https://wonder.cdc.gov/wonder/help/ucd.html" class="uri">https://wonder.cdc.gov/wonder/help/ucd.html</a></p>
+<p>The Underlying Cause of Death data available on WONDER are county-level national mortality and population data spanning the years 1999-2020. Data are based on death certificates for U.S. residents. Each death certificate identifies a single underlying cause of death and demographic data. The number of deaths, crude death rates or age-adjusted death rates, and 95% confidence intervals and standard errors for death rates can be obtained by place of residence (total U.S., region, state and county), age group (single-year-of age, 5-year age groups, 10-year age groups and infant age groups), race, Hispanic ethnicity, gender, year, cause-of-death (4-digit ICD-10 code or group of codes), injury intent and injury mechanism, drug/alcohol induced causes and urbanization categories. Data are also available for place of death, month and week day of death, and whether an autopsy was performed.</p>
+<p>Variables:</p>
+<ol style="list-style-type: decimal">
+<li><p>Location: HHS Regions, Census Regions, Census Divisions, State, County. This is a categorical variable.</p></li>
+<li><p>Age Groups: 10 year age groups, 5 year age groups, single-year age groups and infant age groups. This is a categorical variable.</p></li>
+<li><p>Race: American Indian or Alaskan Native, Asian / Pacific Islander, Black or African American, White. This is a categorical variable.</p></li>
+<li><p>Hispanic Origin: Hispanic or Latino, Not Hispanic or Latino, Not stated. This is a categorical variable.</p></li>
+<li><p>Gender (Sex): Female, Male. This is a binary categorical variable.</p></li>
+<li><p>Year of death: 1999-2020. This is a continuous numerical variable.</p></li>
+<li><p>Month of death: January through December. This is a categorical variable.</p></li>
+<li><p>Weekday of death: Sunday through Saturday, Unknown. This is a categorical variable.</p></li>
+<li><p>Autopsy performed: No, Yes, Unknown. This is a binary variable.</p></li>
+<li><p>Place of Death: Medical Facility - Inpatient, Medical Facility - Outpatient or ER, Medical Facility - Dead on Arrival, Medical Facility - Status Unknown (years 1999-2002 only), Decedent’s home, Hospice Facility (years 2003 and later only), Nursing home/long term care, Other, Place of death unknown. This is a categorical variable.</p></li>
+<li><p>Cause of Death: underlying cause of death - ICD-10 codes, Drug/Alcohol Induced Causes, Injury Intent and Mechanism groups, 113 Selected Causes, 130 Selected Causes (for infants), 15 Leading Causes. This is a categorical variable.</p></li>
+<li><p>Urbanization: classifies population density and other factors at the county level - pick between the 2006 or the 2013 NCHS Urban-Rural Classification Scheme for Counties. This is a categorical variable.</p></li>
+</ol>
+<p>For the additional variables we have, including deaths, population and crude rate, they are all continuous numerical variables.</p>
+<p>The length of the variables depends the filters we input on the CDC website, generally the totally number of data point is above 100,000.</p>
+<p>The data do have some problems, such as age group not stated, populations not applicable, and crude rate not reliable. However, we remove the data that is not stated or not applicable, and recalculated the crude rate using deaths and population variables.</p>
 
 </div>
             </section>

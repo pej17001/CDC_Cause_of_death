@@ -74,8 +74,21 @@
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
 <li class="chapter" data-level="2" data-path="data-sources.html"><a href="data-sources.html"><i class="fa fa-check"></i><b>2</b> Data sources</a></li>
-<li class="chapter" data-level="3" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>3</b> Data transformation</a></li>
-<li class="chapter" data-level="4" data-path="missing-values.html"><a href="missing-values.html"><i class="fa fa-check"></i><b>4</b> Missing values</a></li>
+<li class="chapter" data-level="3" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>3</b> Data transformation</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="data-transformation.html"><a href="data-transformation.html#for-q1-and-q3"><i class="fa fa-check"></i><b>3.1</b> For Q1 and Q3</a></li>
+<li class="chapter" data-level="3.2" data-path="data-transformation.html"><a href="data-transformation.html#for-q2-and-q4"><i class="fa fa-check"></i><b>3.2</b> For Q2 and Q4</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="data-transformation.html"><a href="data-transformation.html#question-2"><i class="fa fa-check"></i><b>3.2.1</b> Question 2</a></li>
+<li class="chapter" data-level="3.2.2" data-path="data-transformation.html"><a href="data-transformation.html#question-4"><i class="fa fa-check"></i><b>3.2.2</b> Question 4</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="missing-values.html"><a href="missing-values.html"><i class="fa fa-check"></i><b>4</b> Missing values</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="missing-values.html"><a href="missing-values.html#for-q1-and-q3-1"><i class="fa fa-check"></i><b>4.1</b> For Q1 and Q3</a></li>
+<li class="chapter" data-level="4.2" data-path="missing-values.html"><a href="missing-values.html#for-q2"><i class="fa fa-check"></i><b>4.2</b> For Q2</a></li>
+<li class="chapter" data-level="4.3" data-path="missing-values.html"><a href="missing-values.html#for-q4"><i class="fa fa-check"></i><b>4.3</b> For Q4</a></li>
+</ul></li>
 <li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a>
 <ul>
 <li class="chapter" data-level="5.1" data-path="results.html"><a href="results.html#question-1-what-are-the-top-5-causes-of-death-in-our-mortality-dataset-compared-to-the-top-10-causes-of-death-online-or-in-common-sense"><i class="fa fa-check"></i><b>5.1</b> Question 1: What are the top 5 causes of death in our mortality dataset compared to the top 10 causes of death online or in common sense?</a></li>
@@ -116,360 +129,45 @@
 <h1><span class="header-section-number">Chapter 5</span> Results<a href="results.html#results" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="question-1-what-are-the-top-5-causes-of-death-in-our-mortality-dataset-compared-to-the-top-10-causes-of-death-online-or-in-common-sense" class="section level2 hasAnchor" number="5.1">
 <h2><span class="header-section-number">5.1</span> Question 1: What are the top 5 causes of death in our mortality dataset compared to the top 10 causes of death online or in common sense?<a href="results.html#question-1-what-are-the-top-5-causes-of-death-in-our-mortality-dataset-compared-to-the-top-10-causes-of-death-online-or-in-common-sense" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-12-1.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-12-2.png" width="672" /></p>
-<pre><code>##                      State                 
-## Alabama              &quot;Alabama&quot;             
-## Arizona              &quot;Arizona&quot;             
-## Arkansas             &quot;Arkansas&quot;            
-## California           &quot;California&quot;          
-## Colorado             &quot;Colorado&quot;            
-## Delaware             &quot;Delaware&quot;            
-## District of Columbia &quot;District of Columbia&quot;
-## Florida              &quot;Florida&quot;             
-## Georgia              &quot;Georgia&quot;             
-## Idaho                &quot;Idaho&quot;               
-## Illinois             &quot;Illinois&quot;            
-## Indiana              &quot;Indiana&quot;             
-## Iowa                 &quot;Iowa&quot;                
-## Kentucky             &quot;Kentucky&quot;            
-## Louisiana            &quot;Louisiana&quot;           
-## Maine                &quot;Maine&quot;               
-## Maryland             &quot;Maryland&quot;            
-## Michigan             &quot;Michigan&quot;            
-## Minnesota            &quot;Minnesota&quot;           
-## Mississippi          &quot;Mississippi&quot;         
-## Missouri             &quot;Missouri&quot;            
-## Nebraska             &quot;Nebraska&quot;            
-## Nevada               &quot;Nevada&quot;              
-## New Hampshire        &quot;New Hampshire&quot;       
-## New Jersey           &quot;New Jersey&quot;          
-## New York             &quot;New York&quot;            
-## North Carolina       &quot;North Carolina&quot;      
-## North Dakota         &quot;North Dakota&quot;        
-## Ohio                 &quot;Ohio&quot;                
-## Oregon               &quot;Oregon&quot;              
-## Pennsylvania         &quot;Pennsylvania&quot;        
-## Rhode Island         &quot;Rhode Island&quot;        
-## South Carolina       &quot;South Carolina&quot;      
-## Tennessee            &quot;Tennessee&quot;           
-## Texas                &quot;Texas&quot;               
-## Utah                 &quot;Utah&quot;                
-## Vermont              &quot;Vermont&quot;             
-## Washington           &quot;Washington&quot;          
-## West Virginia        &quot;West Virginia&quot;       
-## Wisconsin            &quot;Wisconsin&quot;           
-## Wyoming              &quot;Wyoming&quot;             
-##                      Cause.of.death                                       
-## Alabama              &quot;Chronic obstructive pulmonary disease, unspecified&quot; 
-## Arizona              &quot;COVID-19&quot;                                           
-## Arkansas             &quot;Bronchus or lung, unspecified - Malignant neoplasms&quot;
-## California           &quot;Alzheimer disease, unspecified&quot;                     
-## Colorado             &quot;Chronic obstructive pulmonary disease, unspecified&quot; 
-## Delaware             &quot;COVID-19&quot;                                           
-## District of Columbia &quot;Atherosclerotic heart disease&quot;                      
-## Florida              &quot;Alzheimer disease, unspecified&quot;                     
-## Georgia              &quot;Chronic obstructive pulmonary disease, unspecified&quot; 
-## Idaho                &quot;COVID-19&quot;                                           
-## Illinois             &quot;Atherosclerotic heart disease&quot;                      
-## Indiana              &quot;Alzheimer disease, unspecified&quot;                     
-## Iowa                 &quot;Chronic obstructive pulmonary disease, unspecified&quot; 
-## Kentucky             &quot;COVID-19&quot;                                           
-## Louisiana            &quot;Bronchus or lung, unspecified - Malignant neoplasms&quot;
-## Maine                &quot;Alzheimer disease, unspecified&quot;                     
-## Maryland             &quot;Chronic obstructive pulmonary disease, unspecified&quot; 
-## Michigan             &quot;COVID-19&quot;                                           
-## Minnesota            &quot;Atherosclerotic heart disease&quot;                      
-## Mississippi          &quot;Alzheimer disease, unspecified&quot;                     
-## Missouri             &quot;Chronic obstructive pulmonary disease, unspecified&quot; 
-## Nebraska             &quot;COVID-19&quot;                                           
-## Nevada               &quot;Atherosclerotic heart disease&quot;                      
-## New Hampshire        &quot;Alzheimer disease, unspecified&quot;                     
-## New Jersey           &quot;Chronic obstructive pulmonary disease, unspecified&quot; 
-## New York             &quot;COVID-19&quot;                                           
-## North Carolina       &quot;Bronchus or lung, unspecified - Malignant neoplasms&quot;
-## North Dakota         &quot;Alzheimer disease, unspecified&quot;                     
-## Ohio                 &quot;Chronic obstructive pulmonary disease, unspecified&quot; 
-## Oregon               &quot;COVID-19&quot;                                           
-## Pennsylvania         &quot;Atherosclerotic heart disease&quot;                      
-## Rhode Island         &quot;Alzheimer disease, unspecified&quot;                     
-## South Carolina       &quot;Chronic obstructive pulmonary disease, unspecified&quot; 
-## Tennessee            &quot;COVID-19&quot;                                           
-## Texas                &quot;Atherosclerotic heart disease&quot;                      
-## Utah                 &quot;Alzheimer disease, unspecified&quot;                     
-## Vermont              &quot;Chronic obstructive pulmonary disease, unspecified&quot; 
-## Washington           &quot;COVID-19&quot;                                           
-## West Virginia        &quot;Atherosclerotic heart disease&quot;                      
-## Wisconsin            &quot;Alzheimer disease, unspecified&quot;                     
-## Wyoming              &quot;Chronic obstructive pulmonary disease, unspecified&quot; 
-##                      Deaths
-## Alabama              2871  
-## Arizona              8447  
-## Arkansas             1767  
-## California           18333 
-## Colorado             1867  
-## Delaware             1008  
-## District of Columbia 193   
-## Florida              6598  
-## Georgia              3759  
-## Idaho                1358  
-## Illinois             6190  
-## Indiana              2675  
-## Iowa                 1225  
-## Kentucky             4132  
-## Louisiana            2307  
-## Maine                560   
-## Maryland             1501  
-## Michigan             11391 
-## Minnesota            2346  
-## Mississippi          1965  
-## Missouri             3000  
-## Nebraska             2043  
-## Nevada               1269  
-## New Hampshire        474   
-## New Jersey           2205  
-## New York             35736 
-## North Carolina       4872  
-## North Dakota         405   
-## Ohio                 5497  
-## Oregon               1434  
-## Pennsylvania         7422  
-## Rhode Island         482   
-## South Carolina       2365  
-## Tennessee            6838  
-## Texas                9882  
-## Utah                 1071  
-## Vermont              202   
-## Washington           3284  
-## West Virginia        1764  
-## Wisconsin            2442  
-## Wyoming              291</code></pre>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-12-3.png" width="672" /></p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-28-1.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-28-2.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-28-3.png" width="672" /></p>
 <p>The top five disease that lead to death is “COVID-19”, “Atherosclerotic heart disease”, “Bronchus or lung, unspecified - Malignant neoplasms”, “Alzheimer disease, unspecified”, “Chronic obstructive pulmonary disease, unspecified” .
 The top five state that have most death is California, Texas, Florida, New York, Pennsylvanina</p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-29-1.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-29-2.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-29-3.png" width="672" /></p>
+<p>The top five disease that lead to highest death rate is “COVID-19”, “Atherosclerotic heart disease”, “Bronchus or lung, unspecified - Malignant neoplasms”, “Alzheimer disease, unspecified”, “Chronic obstructive pulmonary disease, unspecified”, which is same as previous.
+The top five state that have most death is West Virginia, Mississippi, Alabama, Ohio, Pennsylvanina</p>
 </div>
 <div id="question-2-what-are-the-growth-rates-for-these-5-causes-of-deaths-for-different-identity-groups-in-new-york-state-for-the-previous-10-years" class="section level2 hasAnchor" number="5.2">
 <h2><span class="header-section-number">5.2</span> Question 2: What are the growth rates for these 5 causes of deaths for different identity groups in New York State for the previous 10 years?<a href="results.html#question-2-what-are-the-growth-rates-for-these-5-causes-of-deaths-for-different-identity-groups-in-new-york-state-for-the-previous-10-years" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="female-top-5-causes-of-death-trend" class="section level3 hasAnchor" number="5.2.1">
 <h3><span class="header-section-number">5.2.1</span> Female top 5 causes of death trend<a href="results.html#female-top-5-causes-of-death-trend" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-30-1.png" width="672" /></p>
 </div>
 <div id="male-top-5-causes-of-death-trend" class="section level3 hasAnchor" number="5.2.2">
 <h3><span class="header-section-number">5.2.2</span> Male top 5 causes of death trend<a href="results.html#male-top-5-causes-of-death-trend" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-31-1.png" width="672" /></p>
 <p>For both male and female, Atherosclerotic heart disease is the top one cause of death. For female, unspecified dementia was in an increasing trend in the past 10 years. For male, “Atherosclerotic cardiovascular disease, so described” was increasing drastically in year 2019 and 2020. Also, although death rate of “Chronic obstructive pulmonary disease, unspecified
 M” is not as high as other top 4 causes of death, this still has above 20 per 100,000 of death rate, which all the humanbeings need to be careful about that.</p>
 </div>
 </div>
 <div id="question-3-what-is-the-top-5-cause-of-death-and-what-is-the-spread-of-this-disease-in-the-u.s-by-state-in-2020" class="section level2 hasAnchor" number="5.3">
 <h2><span class="header-section-number">5.3</span> Question 3: What is the top 5 cause of death and what is the spread of this disease in the U.S by state in 2020?<a href="results.html#question-3-what-is-the-top-5-cause-of-death-and-what-is-the-spread-of-this-disease-in-the-u.s-by-state-in-2020" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-15-1.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-15-2.png" width="672" /></p>
-<pre><code>##                      State                 
-## Alabama              &quot;Alabama&quot;             
-## Arizona              &quot;Arizona&quot;             
-## Arkansas             &quot;Arkansas&quot;            
-## California           &quot;California&quot;          
-## Colorado             &quot;Colorado&quot;            
-## Delaware             &quot;Delaware&quot;            
-## District of Columbia &quot;District of Columbia&quot;
-## Florida              &quot;Florida&quot;             
-## Georgia              &quot;Georgia&quot;             
-## Idaho                &quot;Idaho&quot;               
-## Illinois             &quot;Illinois&quot;            
-## Indiana              &quot;Indiana&quot;             
-## Iowa                 &quot;Iowa&quot;                
-## Kentucky             &quot;Kentucky&quot;            
-## Louisiana            &quot;Louisiana&quot;           
-## Maine                &quot;Maine&quot;               
-## Maryland             &quot;Maryland&quot;            
-## Michigan             &quot;Michigan&quot;            
-## Minnesota            &quot;Minnesota&quot;           
-## Mississippi          &quot;Mississippi&quot;         
-## Missouri             &quot;Missouri&quot;            
-## Nebraska             &quot;Nebraska&quot;            
-## Nevada               &quot;Nevada&quot;              
-## New Hampshire        &quot;New Hampshire&quot;       
-## New Jersey           &quot;New Jersey&quot;          
-## New York             &quot;New York&quot;            
-## North Carolina       &quot;North Carolina&quot;      
-## North Dakota         &quot;North Dakota&quot;        
-## Ohio                 &quot;Ohio&quot;                
-## Oregon               &quot;Oregon&quot;              
-## Pennsylvania         &quot;Pennsylvania&quot;        
-## Rhode Island         &quot;Rhode Island&quot;        
-## South Carolina       &quot;South Carolina&quot;      
-## Tennessee            &quot;Tennessee&quot;           
-## Texas                &quot;Texas&quot;               
-## Utah                 &quot;Utah&quot;                
-## Vermont              &quot;Vermont&quot;             
-## Washington           &quot;Washington&quot;          
-## West Virginia        &quot;West Virginia&quot;       
-## Wisconsin            &quot;Wisconsin&quot;           
-## Wyoming              &quot;Wyoming&quot;             
-##                      Cause.of.death                                       
-## Alabama              &quot;Chronic obstructive pulmonary disease, unspecified&quot; 
-## Arizona              &quot;COVID-19&quot;                                           
-## Arkansas             &quot;Bronchus or lung, unspecified - Malignant neoplasms&quot;
-## California           &quot;Alzheimer disease, unspecified&quot;                     
-## Colorado             &quot;Chronic obstructive pulmonary disease, unspecified&quot; 
-## Delaware             &quot;COVID-19&quot;                                           
-## District of Columbia &quot;Atherosclerotic heart disease&quot;                      
-## Florida              &quot;Alzheimer disease, unspecified&quot;                     
-## Georgia              &quot;Chronic obstructive pulmonary disease, unspecified&quot; 
-## Idaho                &quot;COVID-19&quot;                                           
-## Illinois             &quot;Atherosclerotic heart disease&quot;                      
-## Indiana              &quot;Alzheimer disease, unspecified&quot;                     
-## Iowa                 &quot;Chronic obstructive pulmonary disease, unspecified&quot; 
-## Kentucky             &quot;COVID-19&quot;                                           
-## Louisiana            &quot;Bronchus or lung, unspecified - Malignant neoplasms&quot;
-## Maine                &quot;Alzheimer disease, unspecified&quot;                     
-## Maryland             &quot;Chronic obstructive pulmonary disease, unspecified&quot; 
-## Michigan             &quot;COVID-19&quot;                                           
-## Minnesota            &quot;Atherosclerotic heart disease&quot;                      
-## Mississippi          &quot;Alzheimer disease, unspecified&quot;                     
-## Missouri             &quot;Chronic obstructive pulmonary disease, unspecified&quot; 
-## Nebraska             &quot;COVID-19&quot;                                           
-## Nevada               &quot;Atherosclerotic heart disease&quot;                      
-## New Hampshire        &quot;Alzheimer disease, unspecified&quot;                     
-## New Jersey           &quot;Chronic obstructive pulmonary disease, unspecified&quot; 
-## New York             &quot;COVID-19&quot;                                           
-## North Carolina       &quot;Bronchus or lung, unspecified - Malignant neoplasms&quot;
-## North Dakota         &quot;Alzheimer disease, unspecified&quot;                     
-## Ohio                 &quot;Chronic obstructive pulmonary disease, unspecified&quot; 
-## Oregon               &quot;COVID-19&quot;                                           
-## Pennsylvania         &quot;Atherosclerotic heart disease&quot;                      
-## Rhode Island         &quot;Alzheimer disease, unspecified&quot;                     
-## South Carolina       &quot;Chronic obstructive pulmonary disease, unspecified&quot; 
-## Tennessee            &quot;COVID-19&quot;                                           
-## Texas                &quot;Atherosclerotic heart disease&quot;                      
-## Utah                 &quot;Alzheimer disease, unspecified&quot;                     
-## Vermont              &quot;Chronic obstructive pulmonary disease, unspecified&quot; 
-## Washington           &quot;COVID-19&quot;                                           
-## West Virginia        &quot;Atherosclerotic heart disease&quot;                      
-## Wisconsin            &quot;Alzheimer disease, unspecified&quot;                     
-## Wyoming              &quot;Chronic obstructive pulmonary disease, unspecified&quot; 
-##                      DeathRate
-## Alabama              58.33549 
-## Arizona              113.8195 
-## Arkansas             58.30679 
-## California           46.56819 
-## Colorado             32.14687 
-## Delaware             102.1474 
-## District of Columbia 27.07571 
-## Florida              30.35893 
-## Georgia              35.09798 
-## Idaho                74.33304 
-## Illinois             49.17565 
-## Indiana              39.60057 
-## Iowa                 38.72219 
-## Kentucky             92.28877 
-## Louisiana            49.66291 
-## Maine                41.47715 
-## Maryland             24.78615 
-## Michigan             114.2923 
-## Minnesota            41.46824 
-## Mississippi          66.23329 
-## Missouri             48.76821 
-## Nebraska             105.4423 
-## Nevada               40.43643 
-## New Hampshire        34.69287 
-## New Jersey           24.82445 
-## New York             184.8085 
-## North Carolina       45.9587  
-## North Dakota         52.9198  
-## Ohio                 47.01016 
-## Oregon               33.80874 
-## Pennsylvania         58.06033 
-## Rhode Island         45.59536 
-## South Carolina       45.32353 
-## Tennessee            99.29091 
-## Texas                33.65717 
-## Utah                 32.95507 
-## Vermont              32.40571 
-## Washington           42.68476 
-## West Virginia        98.83532 
-## Wisconsin            41.86773 
-## Wyoming              49.97184</code></pre>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-15-3.png" width="672" /></p>
-<p>The top five disease that lead to highest death rate is “COVID-19”, “Atherosclerotic heart disease”, “Bronchus or lung, unspecified - Malignant neoplasms”, “Alzheimer disease, unspecified”, “Chronic obstructive pulmonary disease, unspecified”, which is same as previous.
-The top five state that have most death is West Virginia, Mississippi, Alabama, Ohio, Pennsylvanina</p>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-32-1.png" width="672" /></p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-34-1.png" width="672" /></p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-35-1.png" width="672" /></p>
 <p>The highest death and highest death rate is different.</p>
 </div>
 <div id="question-4-what-is-the-decision-tree-of-locations-race-gender-for-top-1-causes-of-death" class="section level2 hasAnchor" number="5.4">
 <h2><span class="header-section-number">5.4</span> Question 4: What is the decision tree of locations, race, gender for top 1 causes of death?<a href="results.html#question-4-what-is-the-decision-tree-of-locations-race-gender-for-top-1-causes-of-death" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="find-the-top-1-cause-of-death-atherosclerotic-heart-disease" class="section level3 hasAnchor" number="5.4.1">
 <h3><span class="header-section-number">5.4.1</span> Find the top 1 cause of death: Atherosclerotic heart disease<a href="results.html#find-the-top-1-cause-of-death-atherosclerotic-heart-disease" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-36-1.png" width="672" /></p>
 </div>
 <div id="build-the-decision-tree-based-on-previous-finding" class="section level3 hasAnchor" number="5.4.2">
 <h3><span class="header-section-number">5.4.2</span> Build the decision tree based on previous finding<a href="results.html#build-the-decision-tree-based-on-previous-finding" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <pre><code>## 
-##  10027657  10068259  10487157   1062819  10648149    107024 109108110  11118443 
-##         1         1         1         1         1         1         1         1 
-##  11134945   1118506  11217100   1145819  11476326  11512428 116215337 116664300 
-##         1         1         1         1         1         1         1         1 
-##  11667116  11763039   1190870  11977117 120101023  12253357 122543006 122595575 
-##         1         1         1         1         1         1         1         1 
-##  12270170    124782  12519689   1255727 127192324  12719668 127895148 128214364 
-##         1         1         1         1         1         1         1         1 
-## 129787249  12989759 129949399   1305467  13099752 131659126  13301404  13417190 
-##         1         1         1         1         1         1         1         1 
-##   1349494  13755666  13841334  13883712  14444657  14674352    150891   1522673 
-##         1         1         1         1         1         1         1         1 
-##   1552157    155520    156431  15677387  15990292   1602125   1613064   1634175 
-##         1         1         1         1         1         1         1         1 
-##   1682671   1706953    172816   1748655   1801239  18111755   1823043   1833653 
-##         1         1         1         1         1         1         1         1 
-##   1836909   1852670    190995     19859   2033547   2065959   2093299    212628 
-##         1         1         1         1         1         1         1         1 
-##  21463833     21514  21681707    226863   2286436   2321508  23286456  23343193 
-##         1         1         1         1         1         1         1         1 
-##   2370464    244591   2454050    245737   2463488  25848082   2596117  26162528 
-##         1         1         1         1         1         1         1         1 
-##   2625430   2758875   2791778   2806790    286489    287601  29988649  30054832 
-##         1         1         1         1         1         1         1         1 
-##    300786   3068725  30963160    316032    320548  32290881   3255967   3256082 
-##         1         1         1         1         1         1         1         1 
-##   3286340   3293578    341925   3455978  34619771  34777904   3489702    351846 
-##         1         1         1         1         1         1         1         1 
-##    357849  36056508   3619798   3630379   3675517  37112297  37544294   3783239 
-##         1         1         1         1         1         1         1         1 
-##  38132105     38292   3926764   3966933  40017319   4053454  40876950  41062015 
-##         1         1         1         1         1         1         1         1 
-##  41076880   4120310    432011  43823608     44019  44074459   4675856    469501 
-##         1         1         1         1         1         1         1         1 
-##  47054368    472864    478883  48697973   4925237   4948207   4970834    504796 
-##         1         1         1         1         1         1         1         1 
-##   5074053   5116148    516439    519996    525583  53182087  53893370   5459005 
-##         1         1         1         1         1         1         1         1 
-##   5561154    556378     56635   5689182   5690434   5770725  58492518    600005 
-##         1         1         1         1         1         1         1         1 
-##  60315135  60928212  61387291   6150680  62299504   6247023     62858  63469016 
-##         1         1         1         1         1         1         1         1 
-##   6429130   6474853   6511677    653593   6556602  66045342   6645617  66579805 
-##         1         1         1         1         1         1         1         1 
-##   6675303  68787692   6906149   6974042   7008403  70088892  71415061   7201283 
-##         1         1         1         1         1         1         1         1 
-##  72185389   7229480    728640   7355449  73960359  75248066   7589515  76690763 
-##         1         1         1         1         1         1         1         1 
-##    775513   7772227  77724845    782963    793815   8018090  80449227    807066 
-##         1         1         1         1         1         1         1         1 
-##  82236096  82297881   8279050   8336679  83381041     83717  84344339   8437871 
-##         1         1         1         1         1         1         1         1 
-##  84551821  84777292  85101839  85324129  85613632  86078604  86137473   8734100 
-##         1         1         1         1         1         1         1         1 
-##     87382    877500  87930569    883898  88458701    886684  88817065  89111557 
-##         1         1         1         1         1         1         1         1 
-##    893897     89975    905134  91241026   9232177  92434314    938294    942586 
-##         1         1         1         1         1         1         1         1 
-##     94854    965038   9726071    974430    990119 
-##         1         1         1         1         1</code></pre>
-<pre><code>## 
 ##       High        Low     Medium 
 ## 0.06349206 0.51851852 0.41798942</code></pre>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-37-1.png" width="672" /></p>
 
 </div>
 </div>

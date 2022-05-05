@@ -1,25 +1,39 @@
 # Data sources
 
-https://wonder.cdc.gov/wonder/help/ucd.html
+Both of us, Peilin Jing and Jing Wang, are responsible for collecting data, since our problems need different filters on CDC website.
 
-Location: HHS Regions, Census Regions, Census Divisions, State, County
+Data source URL: https://wonder.cdc.gov/wonder/help/ucd.html
 
-Age Groups: 10 year age groups, 5 year age groups, single-year age groups and infant age groupsRace: American Indian or Alaskan Native, Asian / Pacific Islander, Black or African American, White
+The Underlying Cause of Death data available on WONDER are county-level national mortality and population data spanning the years 1999-2020. Data are based on death certificates for U.S. residents. Each death certificate identifies a single underlying cause of death and demographic data. The number of deaths, crude death rates or age-adjusted death rates, and 95% confidence intervals and standard errors for death rates can be obtained by place of residence (total U.S., region, state and county), age group (single-year-of age, 5-year age groups, 10-year age groups and infant age groups), race, Hispanic ethnicity, gender, year, cause-of-death (4-digit ICD-10 code or group of codes), injury intent and injury mechanism, drug/alcohol induced causes and urbanization categories. Data are also available for place of death, month and week day of death, and whether an autopsy was performed.
 
-Hispanic Origin: Hispanic or Latino, Not Hispanic or Latino, Not stated
+Variables:
 
-Gender (Sex): Female, Male
+1.	Location: HHS Regions, Census Regions, Census Divisions, State, County. This is a categorical variable.
 
-Year of death: 1999-2020
+2.	Age Groups: 10 year age groups, 5 year age groups, single-year age groups and infant age groups. This is a categorical variable.
 
-Month of death: January through December
+3.	Race: American Indian or Alaskan Native, Asian / Pacific Islander, Black or African American, White. This is a categorical variable.
 
-Weekday of death: Sunday through Saturday, Unknown
+4.	Hispanic Origin: Hispanic or Latino, Not Hispanic or Latino, Not stated. This is a categorical variable.
 
-Autopsy performed: No, Yes, Unknown
+5.	Gender (Sex): Female, Male. This is a binary categorical variable.
 
-Place of Death: Medical Facility - Inpatient, Medical Facility - Outpatient or ER, Medical Facility - Dead on Arrival, Medical Facility - Status Unknown (years 1999-2002 only), Decedent’s home, Hospice Facility (years 2003 and later only), Nursing home/long term care, Other, Place of death unknown
+6.	Year of death: 1999-2020. This is a continuous numerical variable.
 
-Cause of Death: underlying cause of death - ICD-10 codes, Drug/Alcohol Induced Causes, Injury Intent and Mechanism groups, 113 Selected Causes, 130 Selected Causes (for infants), 15 Leading Causes
+7.	Month of death: January through December. This is a categorical variable.
 
-Urbanization: classifies population density and other factors at the county level - pick between the 2006 or the 2013 NCHS Urban-Rural Classification Scheme for Counties
+8.	Weekday of death: Sunday through Saturday, Unknown. This is a categorical variable.
+
+9.	Autopsy performed: No, Yes, Unknown. This is a binary variable.
+
+10.	Place of Death: Medical Facility - Inpatient, Medical Facility - Outpatient or ER, Medical Facility - Dead on Arrival, Medical Facility - Status Unknown (years 1999-2002 only), Decedent's home, Hospice Facility (years 2003 and later only), Nursing home/long term care, Other, Place of death unknown. This is a categorical variable.
+
+11.	Cause of Death: underlying cause of death - ICD-10 codes, Drug/Alcohol Induced Causes, Injury Intent and Mechanism groups, 113 Selected Causes, 130 Selected Causes (for infants), 15 Leading Causes. This is a categorical variable.
+
+12.	Urbanization: classifies population density and other factors at the county level - pick between the 2006 or the 2013 NCHS Urban-Rural Classification Scheme for Counties. This is a categorical variable. 
+
+For the additional variables we have, including deaths, population and crude rate, they are all continuous numerical variables.
+
+The length of the variables depends the filters we input on the CDC website, generally the totally number of data point is above 100,000.
+
+The data do have some problems, such as age group not stated, populations not applicable, and crude rate not reliable. However, we remove the data that is not stated or not applicable, and recalculated the crude rate using deaths and population variables.

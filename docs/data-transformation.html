@@ -74,8 +74,21 @@
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
 <li class="chapter" data-level="2" data-path="data-sources.html"><a href="data-sources.html"><i class="fa fa-check"></i><b>2</b> Data sources</a></li>
-<li class="chapter" data-level="3" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>3</b> Data transformation</a></li>
-<li class="chapter" data-level="4" data-path="missing-values.html"><a href="missing-values.html"><i class="fa fa-check"></i><b>4</b> Missing values</a></li>
+<li class="chapter" data-level="3" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>3</b> Data transformation</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="data-transformation.html"><a href="data-transformation.html#for-q1-and-q3"><i class="fa fa-check"></i><b>3.1</b> For Q1 and Q3</a></li>
+<li class="chapter" data-level="3.2" data-path="data-transformation.html"><a href="data-transformation.html#for-q2-and-q4"><i class="fa fa-check"></i><b>3.2</b> For Q2 and Q4</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="data-transformation.html"><a href="data-transformation.html#question-2"><i class="fa fa-check"></i><b>3.2.1</b> Question 2</a></li>
+<li class="chapter" data-level="3.2.2" data-path="data-transformation.html"><a href="data-transformation.html#question-4"><i class="fa fa-check"></i><b>3.2.2</b> Question 4</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="missing-values.html"><a href="missing-values.html"><i class="fa fa-check"></i><b>4</b> Missing values</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="missing-values.html"><a href="missing-values.html#for-q1-and-q3-1"><i class="fa fa-check"></i><b>4.1</b> For Q1 and Q3</a></li>
+<li class="chapter" data-level="4.2" data-path="missing-values.html"><a href="missing-values.html#for-q2"><i class="fa fa-check"></i><b>4.2</b> For Q2</a></li>
+<li class="chapter" data-level="4.3" data-path="missing-values.html"><a href="missing-values.html#for-q4"><i class="fa fa-check"></i><b>4.3</b> For Q4</a></li>
+</ul></li>
 <li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a>
 <ul>
 <li class="chapter" data-level="5.1" data-path="results.html"><a href="results.html#question-1-what-are-the-top-5-causes-of-death-in-our-mortality-dataset-compared-to-the-top-10-causes-of-death-online-or-in-common-sense"><i class="fa fa-check"></i><b>5.1</b> Question 1: What are the top 5 causes of death in our mortality dataset compared to the top 10 causes of death online or in common sense?</a></li>
@@ -114,7 +127,8 @@
             <section class="normal" id="section-">
 <div id="data-transformation" class="section level1 hasAnchor" number="3">
 <h1><span class="header-section-number">Chapter 3</span> Data transformation<a href="data-transformation.html#data-transformation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>For Q1 and Q3</p>
+<div id="for-q1-and-q3" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> For Q1 and Q3<a href="data-transformation.html#for-q1-and-q3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <pre><code>##                               Cause.of.death Cause.of.death.Code       State
 ## 1 Enterocolitis due to Clostridium difficile               A04.7     Alabama
 ## 2 Enterocolitis due to Clostridium difficile               A04.7     Arizona
@@ -130,71 +144,54 @@
 ## 5          8 2020      2020     57    5807719        1.0
 ## 6          9 2020      2020     43    3557006        1.2</code></pre>
 <p>For the data record of the 2020 whole year, we downloaded it seperately and joint them by rbind. After that, we deleted the first column ‘note’ and droped the rows that contains NA. Then, we get a data set that can did futher analysis.</p>
-<p>For Q2 and Q4</p>
-<pre><code>## 
-##  10027657  10068259  10487157   1062819  10648149    107024 109108110  11118443 
-##         1         1         1         1         1         1         1         1 
-##  11134945   1118506  11217100   1145819  11476326  11512428 116215337 116664300 
-##         1         1         1         1         1         1         1         1 
-##  11667116  11763039   1190870  11977117 120101023  12253357 122543006 122595575 
-##         1         1         1         1         1         1         1         1 
-##  12270170    124782  12519689   1255727 127192324  12719668 127895148 128214364 
-##         1         1         1         1         1         1         1         1 
-## 129787249  12989759 129949399   1305467  13099752 131659126  13301404  13417190 
-##         1         1         1         1         1         1         1         1 
-##   1349494  13755666  13841334  13883712  14444657  14674352    150891   1522673 
-##         1         1         1         1         1         1         1         1 
-##   1552157    155520    156431  15677387  15990292   1602125   1613064   1634175 
-##         1         1         1         1         1         1         1         1 
-##   1682671   1706953    172816   1748655   1801239  18111755   1823043   1833653 
-##         1         1         1         1         1         1         1         1 
-##   1836909   1852670    190995     19859   2033547   2065959   2093299    212628 
-##         1         1         1         1         1         1         1         1 
-##  21463833     21514  21681707    226863   2286436   2321508  23286456  23343193 
-##         1         1         1         1         1         1         1         1 
-##   2370464    244591   2454050    245737   2463488  25848082   2596117  26162528 
-##         1         1         1         1         1         1         1         1 
-##   2625430   2758875   2791778   2806790    286489    287601  29988649  30054832 
-##         1         1         1         1         1         1         1         1 
-##    300786   3068725  30963160    316032    320548  32290881   3255967   3256082 
-##         1         1         1         1         1         1         1         1 
-##   3286340   3293578    341925   3455978  34619771  34777904   3489702    351846 
-##         1         1         1         1         1         1         1         1 
-##    357849  36056508   3619798   3630379   3675517  37112297  37544294   3783239 
-##         1         1         1         1         1         1         1         1 
-##  38132105     38292   3926764   3966933  40017319   4053454  40876950  41062015 
-##         1         1         1         1         1         1         1         1 
-##  41076880   4120310    432011  43823608     44019  44074459   4675856    469501 
-##         1         1         1         1         1         1         1         1 
-##  47054368    472864    478883  48697973   4925237   4948207   4970834    504796 
-##         1         1         1         1         1         1         1         1 
-##   5074053   5116148    516439    519996    525583  53182087  53893370   5459005 
-##         1         1         1         1         1         1         1         1 
-##   5561154    556378     56635   5689182   5690434   5770725  58492518    600005 
-##         1         1         1         1         1         1         1         1 
-##  60315135  60928212  61387291   6150680  62299504   6247023     62858  63469016 
-##         1         1         1         1         1         1         1         1 
-##   6429130   6474853   6511677    653593   6556602  66045342   6645617  66579805 
-##         1         1         1         1         1         1         1         1 
-##   6675303  68787692   6906149   6974042   7008403  70088892  71415061   7201283 
-##         1         1         1         1         1         1         1         1 
-##  72185389   7229480    728640   7355449  73960359  75248066   7589515  76690763 
-##         1         1         1         1         1         1         1         1 
-##    775513   7772227  77724845    782963    793815   8018090  80449227    807066 
-##         1         1         1         1         1         1         1         1 
-##  82236096  82297881   8279050   8336679  83381041     83717  84344339   8437871 
-##         1         1         1         1         1         1         1         1 
-##  84551821  84777292  85101839  85324129  85613632  86078604  86137473   8734100 
-##         1         1         1         1         1         1         1         1 
-##     87382    877500  87930569    883898  88458701    886684  88817065  89111557 
-##         1         1         1         1         1         1         1         1 
-##    893897     89975    905134  91241026   9232177  92434314    938294    942586 
-##         1         1         1         1         1         1         1         1 
-##     94854    965038   9726071    974430    990119 
-##         1         1         1         1         1</code></pre>
+</div>
+<div id="for-q2-and-q4" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> For Q2 and Q4<a href="data-transformation.html#for-q2-and-q4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="question-2" class="section level3 hasAnchor" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> Question 2<a href="data-transformation.html#question-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<pre><code>##   Year                             Cause.of.death Gender Deaths Population
+## 1 2016 Enterocolitis due to Clostridium difficile Female    216   10157924
+## 2 2017 Enterocolitis due to Clostridium difficile Female    196   10211937
+## 3 2018 Enterocolitis due to Clostridium difficile Female    160   10053779
+## 4 2019 Enterocolitis due to Clostridium difficile Female    167   10005715
+## 5 2020 Enterocolitis due to Clostridium difficile Female    127    9946279
+## 6 2016 Enterocolitis due to Clostridium difficile   Male    153    9587365</code></pre>
 <p>For the data in Q2, we downloaded this dataset from 2011 to 2020 timer period (two datasets merged), and the filters are cause of death, gender, year, and state. The state is specifically New York, and cause of death is ICD-10 Codes.</p>
+</div>
+<div id="question-4" class="section level3 hasAnchor" number="3.2.2">
+<h3><span class="header-section-number">3.2.2</span> Question 4<a href="data-transformation.html#question-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<pre><code>##                Census.Region Census.Region.Code Ten.Year.Age.Groups
+## 1 Census Region 1: Northeast            CENS-R1         15-24 years
+## 2 Census Region 1: Northeast            CENS-R1         15-24 years
+## 3 Census Region 1: Northeast            CENS-R1         15-24 years
+## 4 Census Region 1: Northeast            CENS-R1         15-24 years
+## 5 Census Region 1: Northeast            CENS-R1         25-34 years
+## 6 Census Region 1: Northeast            CENS-R1         25-34 years
+##   Ten.Year.Age.Groups.Code Gender Gender.Code                      Race
+## 1                    15-24 Female           F Black or African American
+## 2                    15-24 Female           F                     White
+## 3                    15-24   Male           M Black or African American
+## 4                    15-24   Male           M                     White
+## 5                    25-34 Female           F Asian or Pacific Islander
+## 6                    25-34 Female           F Black or African American
+##   Race.Code                Cause.of.death Cause.of.death.Code Deaths Population
+## 1    2054-5 Atherosclerotic heart disease               I25.1     16   13099752
+## 2    2106-3 Atherosclerotic heart disease               I25.1     18   60928212
+## 3    2054-5 Atherosclerotic heart disease               I25.1     26   13301404
+## 4    2106-3 Atherosclerotic heart disease               I25.1     89   63469016
+## 5      A-PI Atherosclerotic heart disease               I25.1     10    7008403
+## 6    2054-5 Atherosclerotic heart disease               I25.1     62   12519689
+##   Crude.Rate
+## 1 Unreliable
+## 2 Unreliable
+## 3        0.2
+## 4        0.1
+## 5 Unreliable
+## 6        0.5</code></pre>
 <p>Fot the data in Q4, we downloaded two datasets. First one “Final Project Q4.txt” only contains cause of death and it’s death rate, which we used this dataset to find the top 1 causes of death. Then, we download the dataset “Final Project Q4 Full.txt” using filters cause of death, gender, census region, race,etc. We used the categorical variable from the filters to build the decision tree.</p>
 
+</div>
+</div>
 </div>
             </section>
 

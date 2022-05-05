@@ -1,5 +1,6 @@
 # Missing values
-For Q1 and Q3
+
+## For Q1 and Q3
 ```{r}
 library(mi) 
 x <- missing_data.frame(df) 
@@ -8,7 +9,7 @@ library(redav)
 plot_missing(df, percent = TRUE)
 ```
 
-Q2
+## For Q2
 ```{r, warning=FALSE}
 # Female
 data2c <- as.data.frame(data2c)
@@ -25,7 +26,7 @@ image(b)
 plot_missing(data2f, percent = FALSE)
 ```
 
-Q4
+## For Q4
 ```{r, warning=FALSE}
 data4d <- as.data.frame(data4d)
 c <- missing_data.frame(data4d)

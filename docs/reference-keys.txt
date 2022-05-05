@@ -1,7 +1,14 @@
 introduction
 data-sources
 data-transformation
+for-q1-and-q3
+for-q2-and-q4
+question-2
+question-4
 missing-values
+for-q1-and-q3-1
+for-q2
+for-q4
 results
 question-1-what-are-the-top-5-causes-of-death-in-our-mortality-dataset-compared-to-the-top-10-causes-of-death-online-or-in-common-sense
 question-2-what-are-the-growth-rates-for-these-5-causes-of-deaths-for-different-identity-groups-in-new-york-state-for-the-previous-10-years

@@ -18,7 +18,6 @@ max<-function(df){
 }
 state_dis<-sapply(state_dis.split,max)
 state_dis<-as.matrix(t(state_dis))
-state_dis
 ggplot(S_death_dis, aes(x = State, y = Deaths, group = Cause.of.death),ordered=TRUE) + 
   geom_col(aes(fill=Cause.of.death)) +
   theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.25)) +
@@ -27,6 +26,33 @@ ggplot(S_death_dis, aes(x = State, y = Deaths, group = Cause.of.death),ordered=T
 
 The top five disease that lead to death is "COVID-19", "Atherosclerotic heart disease", "Bronchus or lung, unspecified - Malignant neoplasms", "Alzheimer disease, unspecified", "Chronic obstructive pulmonary disease, unspecified" .
 The top five state that have most death is California, Texas, Florida, New York, Pennsylvanina
+
+
+```{r}
+df$DeathRate<-df$Deaths/df$Population*100000
+disease.split<-aggregate(DeathRate~Cause.of.death,data=df,sum)
+disease.split<-arrange(disease.split, desc(DeathRate))[1:5,]
+fivediseaseRate<-unique(disease.split$Cause.of.death)
+barplot(disease.split$DeathRate,names.arg=disease.split$Cause.of.death,horiz = TRUE,main="Total Death Rate")
+S_death_rate<-aggregate(DeathRate~State,data=df,sum)
+S_death_rate<-arrange(S_death_rate,DeathRate)
+barplot(S_death_rate$DeathRate,names.arg=S_death$State,horiz = TRUE,main="State total Deathrate")
+S_death_dis<-aggregate(DeathRate~State+Cause.of.death,data=df,sum)
+S_death_dis<-S_death_dis[S_death_dis$Cause.of.death==fivediseaseRate, ]
+state_dis.split<-split(S_death_dis,S_death_dis$State)
+max<-function(df){
+  return(df[which.max(df$DeathRate),])
+}
+state_dis<-sapply(state_dis.split,max)
+state_dis<-t(state_dis)
+ggplot(S_death_dis, aes(x = State, y = DeathRate, group = Cause.of.death),ordered=TRUE) + 
+  geom_col(aes(fill=Cause.of.death)) +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.25)) +
+  coord_flip()
+```
+
+The top five disease that lead to highest death rate is "COVID-19", "Atherosclerotic heart disease", "Bronchus or lung, unspecified - Malignant neoplasms", "Alzheimer disease, unspecified", "Chronic obstructive pulmonary disease, unspecified", which is same as previous.
+The top five state that have most death is West Virginia, Mississippi, Alabama, Ohio, Pennsylvanina
 
 ## Question 2: What are the growth rates for these 5 causes of deaths for different identity groups in New York State for the previous 10 years?
 
@@ -91,34 +117,6 @@ For both male and female, Atherosclerotic heart disease is the top one cause of 
 M" is not as high as other top 4 causes of death, this still has above 20 per 100,000 of death rate, which all the humanbeings need to be careful about that.
 
 ## Question 3: What is the top 5 cause of death and what is the spread of this disease in the U.S by state in 2020?
-
-```{r}
-df$DeathRate<-df$Deaths/df$Population*100000
-disease.split<-aggregate(DeathRate~Cause.of.death,data=df,sum)
-disease.split<-arrange(disease.split, desc(DeathRate))[1:5,]
-fivediseaseRate<-unique(disease.split$Cause.of.death)
-barplot(disease.split$DeathRate,names.arg=disease.split$Cause.of.death,horiz = TRUE,main="Total Death Rate")
-S_death_rate<-aggregate(DeathRate~State,data=df,sum)
-S_death_rate<-arrange(S_death_rate,DeathRate)
-barplot(S_death_rate$DeathRate,names.arg=S_death$State,horiz = TRUE,main="State total Deathrate")
-S_death_dis<-aggregate(DeathRate~State+Cause.of.death,data=df,sum)
-S_death_dis<-S_death_dis[S_death_dis$Cause.of.death==fivediseaseRate, ]
-state_dis.split<-split(S_death_dis,S_death_dis$State)
-max<-function(df){
-  return(df[which.max(df$DeathRate),])
-}
-state_dis<-sapply(state_dis.split,max)
-state_dis<-t(state_dis)
-state_dis
-ggplot(S_death_dis, aes(x = State, y = DeathRate, group = Cause.of.death),ordered=TRUE) + 
-  geom_col(aes(fill=Cause.of.death)) +
-  theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.25)) +
-  coord_flip()
-```
-
-The top five disease that lead to highest death rate is "COVID-19", "Atherosclerotic heart disease", "Bronchus or lung, unspecified - Malignant neoplasms", "Alzheimer disease, unspecified", "Chronic obstructive pulmonary disease, unspecified", which is same as previous.
-The top five state that have most death is West Virginia, Mississippi, Alabama, Ohio, Pennsylvanina
-
 
 ```{r}
 library(vcdExtra)
@@ -207,15 +205,6 @@ ggplot(data4c, aes(Year, Rate, color = Cause.of.death)) +
 ### Build the decision tree based on previous finding
 
 ```{r}
-# Input the data we use for decision tree
-data4d <- read_tsv("Final Project Q4 Full.txt",  show_col_types = FALSE)
-data4d <- na.omit(data4d[,-1])
-data4d <- data.frame(data4d)
-data4d<- na_if(data4d,"Not Applicable")
-table(data4d$Population)
-# Clean data
-data4e <- data4d %>% na.omit()
-
 # Select the variables we need
 data4e$Rate <- (as.numeric(data4e$Deaths)/as.numeric(data4e$Population))*100000
 
