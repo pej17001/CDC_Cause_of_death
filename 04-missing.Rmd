@@ -1,4 +1,5 @@
 # Missing values
+1. 
 ```{r}
 library(mi) 
 x <- missing_data.frame(df) 
