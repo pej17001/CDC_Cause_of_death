@@ -3,5 +3,13 @@ data-sources
 data-transformation
 missing-values
 results
+question-1-what-are-the-top-5-causes-of-death-in-our-mortality-dataset-compared-to-the-top-10-causes-of-death-online-or-in-common-sense
+question-2-what-are-the-growth-rates-for-these-5-causes-of-deaths-for-different-identity-groups-in-new-york-state-for-the-previous-10-years
+female-top-5-causes-of-death-trend
+male-top-5-causes-of-death-trend
+question-3-what-is-the-top-5-cause-of-death-and-what-is-the-spread-of-this-disease-in-the-u.s-by-state-in-2020
+question-4-what-is-the-decision-tree-of-locations-race-gender-for-top-1-causes-of-death
+find-the-top-1-cause-of-death-atherosclerotic-heart-disease
+build-the-decision-tree-based-on-previous-finding
 interactive-component
 conclusion
