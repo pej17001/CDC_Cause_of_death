@@ -1,5 +1,7 @@
 # Results
-1. 
+
+## Question 1: What are the top 5 causes of death in our mortality dataset compared to the top 10 causes of death online or in common sense?
+
 ```{r}
 disease.split<-aggregate(Deaths~Cause.of.death,data=df,sum)
 disease.split<-arrange(disease.split, desc(Deaths))[1:5,]
@@ -25,7 +27,11 @@ ggplot(S_death_dis, aes(x = State, y = Deaths, group = Cause.of.death),ordered=T
 
 The top five disease that lead to death is "COVID-19", "Atherosclerotic heart disease", "Bronchus or lung, unspecified - Malignant neoplasms", "Alzheimer disease, unspecified", "Chronic obstructive pulmonary disease, unspecified" .
 The top five state that have most death is California, Texas, Florida, New York, Pennsylvanina
-2.
+
+## Question 2: What are the growth rates for these 5 causes of deaths for different identity groups in New York State for the previous 10 years?
+
+### Female top 5 causes of death trend 
+
 ```{r}
 # Find the rate
 data.2$Rate <- (data.2$Deaths/data.2$Population)*100000
@@ -52,6 +58,11 @@ ggplot(data2c, aes(Year, Rate, color = Cause.of.death)) +
   ylim(20, 106) +
   scale_x_continuous(breaks = seq(2011, 2020, 1)) +
   ggtitle("5 top causes of death for Female from 2011 to 2020 in NY")
+```
+
+### Male top 5 causes of death trend
+
+```{r}
 
 # Male 
 
@@ -79,7 +90,8 @@ ggplot(data2f, aes(Year, Rate, color = Cause.of.death)) +
 For both male and female, Atherosclerotic heart disease is the top one cause of death. For female, unspecified dementia was in an increasing trend in the past 10 years. For male, "Atherosclerotic cardiovascular disease, so described" was increasing drastically in year 2019 and 2020. Also, although death rate of  "Chronic obstructive pulmonary disease, unspecified
 M" is not as high as other top 4 causes of death, this still has above 20 per 100,000 of death rate, which all the humanbeings need to be careful about that.
 
-3. 
+## Question 3: What is the top 5 cause of death and what is the spread of this disease in the U.S by state in 2020?
+
 ```{r}
 df$DeathRate<-df$Deaths/df$Population*100000
 disease.split<-aggregate(DeathRate~Cause.of.death,data=df,sum)
@@ -106,6 +118,7 @@ ggplot(S_death_dis, aes(x = State, y = DeathRate, group = Cause.of.death),ordere
 
 The top five disease that lead to highest death rate is "COVID-19", "Atherosclerotic heart disease", "Bronchus or lung, unspecified - Malignant neoplasms", "Alzheimer disease, unspecified", "Chronic obstructive pulmonary disease, unspecified", which is same as previous.
 The top five state that have most death is West Virginia, Mississippi, Alabama, Ohio, Pennsylvanina
+
 
 ```{r}
 library(vcdExtra)
@@ -149,7 +162,11 @@ state_choropleth(deathrate,
 
 The highest death and highest death rate is different.
 
-4.
+
+
+## Question 4: What is the decision tree of locations, race, gender for top 1 causes of death? 
+
+### Find the top 1 cause of death: Atherosclerotic heart disease
 ```{r,warning=FALSE}
 # install.packages("rpart.plot")
 library(rpart)
@@ -185,7 +202,11 @@ ggplot(data4c, aes(Year, Rate, color = Cause.of.death)) +
 
 # Atherosclerotic heart disease is the top cause of death in U.S for previous
 # 10 years from 2011-2020.
+```
 
+### Build the decision tree based on previous finding
+
+```{r}
 # Input the data we use for decision tree
 data4d <- read_tsv("Final Project Q4 Full.txt",  show_col_types = FALSE)
 data4d <- na.omit(data4d[,-1])
