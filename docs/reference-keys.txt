@@ -10,7 +10,7 @@ for-q1-and-q3-1
 for-q2
 for-q4
 results
-what-are-the-top-5-causes-of-death-in-our-mortality-dataset-and-what-is-top-5-states-that-have-most-deaths-of-these-causes
+question-1-what-are-the-top-5-causes-of-death-in-our-mortality-dataset-and-what-is-top-5-states-that-have-most-deaths-of-these-causes
 question-2-what-are-the-growth-rates-for-these-5-causes-of-deaths-for-different-identity-groups-in-new-york-state-for-the-previous-10-years
 female-top-5-causes-of-death-trend
 male-top-5-causes-of-death-trend

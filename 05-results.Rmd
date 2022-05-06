@@ -1,6 +1,6 @@
 # Results
 
-## What are the top 5 causes of death in our mortality dataset and what is  top 5 states that have most deaths of these causes?
+## Question 1: What are the top 5 causes of death in our mortality dataset and what is  top 5 states that have most deaths of these causes?
 
 ```{r}
 disease.split<-aggregate(Deaths~Cause.of.death,data=df,sum)
@@ -160,7 +160,7 @@ state_choropleth(deathrate,
                  legend = "Death Rate")
 ```
 
-The highest death and highest death rate is different.
+The highest death and highest death rate are different. This is because each state has different populations. For example, TX and CA have the high death, but they have low death rate as we can see in the plots.
 
 ## Question 4: What is the relationship between (locations, race, gender, age) and top 1 causes of death?
 
