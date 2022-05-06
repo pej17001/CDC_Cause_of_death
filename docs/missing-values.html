@@ -52,6 +52,13 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.10.0/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
 
 
 
@@ -91,21 +98,34 @@
 </ul></li>
 <li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="results.html"><a href="results.html#question-1-what-are-the-top-5-causes-of-death-in-our-mortality-dataset-compared-to-the-top-10-causes-of-death-online-or-in-common-sense"><i class="fa fa-check"></i><b>5.1</b> Question 1: What are the top 5 causes of death in our mortality dataset compared to the top 10 causes of death online or in common sense?</a></li>
+<li class="chapter" data-level="5.1" data-path="results.html"><a href="results.html#what-are-the-top-5-causes-of-death-in-our-mortality-dataset-and-what-is-top-5-states-that-have-most-deaths-of-these-causes"><i class="fa fa-check"></i><b>5.1</b> What are the top 5 causes of death in our mortality dataset and what is top 5 states that have most deaths of these causes?</a></li>
 <li class="chapter" data-level="5.2" data-path="results.html"><a href="results.html#question-2-what-are-the-growth-rates-for-these-5-causes-of-deaths-for-different-identity-groups-in-new-york-state-for-the-previous-10-years"><i class="fa fa-check"></i><b>5.2</b> Question 2: What are the growth rates for these 5 causes of deaths for different identity groups in New York State for the previous 10 years?</a>
 <ul>
 <li class="chapter" data-level="5.2.1" data-path="results.html"><a href="results.html#female-top-5-causes-of-death-trend"><i class="fa fa-check"></i><b>5.2.1</b> Female top 5 causes of death trend</a></li>
 <li class="chapter" data-level="5.2.2" data-path="results.html"><a href="results.html#male-top-5-causes-of-death-trend"><i class="fa fa-check"></i><b>5.2.2</b> Male top 5 causes of death trend</a></li>
 </ul></li>
 <li class="chapter" data-level="5.3" data-path="results.html"><a href="results.html#question-3-what-is-the-top-5-cause-of-death-and-what-is-the-spread-of-this-disease-in-the-u.s-by-state-in-2020"><i class="fa fa-check"></i><b>5.3</b> Question 3: What is the top 5 cause of death and what is the spread of this disease in the U.S by state in 2020?</a></li>
-<li class="chapter" data-level="5.4" data-path="results.html"><a href="results.html#question-4-what-is-the-decision-tree-of-locations-race-gender-for-top-1-causes-of-death"><i class="fa fa-check"></i><b>5.4</b> Question 4: What is the decision tree of locations, race, gender for top 1 causes of death?</a>
+<li class="chapter" data-level="5.4" data-path="results.html"><a href="results.html#question-4-what-is-the-relationship-between-locations-race-gender-age-and-top-1-causes-of-death"><i class="fa fa-check"></i><b>5.4</b> Question 4: What is the relationship between (locations, race, gender, age) and top 1 causes of death?</a>
 <ul>
 <li class="chapter" data-level="5.4.1" data-path="results.html"><a href="results.html#find-the-top-1-cause-of-death-atherosclerotic-heart-disease"><i class="fa fa-check"></i><b>5.4.1</b> Find the top 1 cause of death: Atherosclerotic heart disease</a></li>
-<li class="chapter" data-level="5.4.2" data-path="results.html"><a href="results.html#build-the-decision-tree-based-on-previous-finding"><i class="fa fa-check"></i><b>5.4.2</b> Build the decision tree based on previous finding</a></li>
+<li class="chapter" data-level="5.4.2" data-path="results.html"><a href="results.html#create-mosaic-plot"><i class="fa fa-check"></i><b>5.4.2</b> Create Mosaic Plot</a></li>
+<li class="chapter" data-level="5.4.3" data-path="results.html"><a href="results.html#build-the-decision-tree-based-on-previous-finding"><i class="fa fa-check"></i><b>5.4.3</b> Build the decision tree based on previous finding</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="interactive-component.html"><a href="interactive-component.html"><i class="fa fa-check"></i><b>6</b> Interactive component</a></li>
-<li class="chapter" data-level="7" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>7</b> Conclusion</a></li>
+<li class="chapter" data-level="6" data-path="interactive-component.html"><a href="interactive-component.html"><i class="fa fa-check"></i><b>6</b> Interactive component</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="interactive-component.html"><a href="interactive-component.html#time-series-interactive-plot-q2"><i class="fa fa-check"></i><b>6.1</b> Time series interactive plot (Q2)</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="interactive-component.html"><a href="interactive-component.html#female"><i class="fa fa-check"></i><b>6.1.1</b> Female</a></li>
+<li class="chapter" data-level="6.1.2" data-path="interactive-component.html"><a href="interactive-component.html#male"><i class="fa fa-check"></i><b>6.1.2</b> Male</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>7</b> Conclusion</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="conclusion.html"><a href="conclusion.html#question-1-and-3"><i class="fa fa-check"></i><b>7.1</b> Question 1 and 3</a></li>
+<li class="chapter" data-level="7.2" data-path="conclusion.html"><a href="conclusion.html#question-2-and-4"><i class="fa fa-check"></i><b>7.2</b> Question 2 and 4</a></li>
+<li class="chapter" data-level="7.3" data-path="conclusion.html"><a href="conclusion.html#conclusion-for-the-project"><i class="fa fa-check"></i><b>7.3</b> Conclusion for the project</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 </ul>
@@ -129,11 +149,13 @@
 <h1><span class="header-section-number">Chapter 4</span> Missing values<a href="missing-values.html#missing-values" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="for-q1-and-q3-1" class="section level2 hasAnchor" number="4.1">
 <h2><span class="header-section-number">4.1</span> For Q1 and Q3<a href="missing-values.html#for-q1-and-q3-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-24-1.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-24-2.png" width="672" /></p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-57-1.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-57-2.png" width="672" /></p>
+<p>For Q1 and Q3, our data is not missing any value, and they are complete cases.</p>
 </div>
 <div id="for-q2" class="section level2 hasAnchor" number="4.2">
 <h2><span class="header-section-number">4.2</span> For Q2<a href="missing-values.html#for-q2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-25-1.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-25-2.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-25-3.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-25-4.png" width="672" /></p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-58-1.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-58-2.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-58-3.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-58-4.png" width="672" /></p>
+<p>For Q2, our datasets are not missing any value, and they are complete cases.</p>
 </div>
 <div id="for-q4" class="section level2 hasAnchor" number="4.3">
 <h2><span class="header-section-number">4.3</span> For Q4<a href="missing-values.html#for-q4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -141,7 +163,8 @@
 ##  Please verify whether they are in fact logically distinct variables.
 ##      [,1]         [,2]        
 ## [1,] &quot;Population&quot; &quot;Crude.Rate&quot;</code></pre>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-26-1.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-26-2.png" width="672" /></p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-59-1.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-59-2.png" width="672" /></p>
+<p>For Q4, we have 4 missing values in population, which results in 4 missing values in crude rate.</p>
 
 </div>
 </div>

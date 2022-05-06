@@ -1,6 +1,7 @@
 # Missing values
 
 ## For Q1 and Q3
+
 ```{r}
 library(mi) 
 x <- missing_data.frame(df) 
@@ -9,7 +10,10 @@ library(redav)
 plot_missing(df, percent = TRUE)
 ```
 
+For Q1 and Q3, our data is not missing any value, and they are complete cases.
+
 ## For Q2
+
 ```{r, warning=FALSE}
 # Female
 data2c <- as.data.frame(data2c)
@@ -26,11 +30,15 @@ image(b)
 plot_missing(data2f, percent = FALSE)
 ```
 
+For Q2, our datasets are not missing any value, and they are complete cases.
+
 ## For Q4
+
 ```{r, warning=FALSE}
 data4d <- as.data.frame(data4d)
 c <- missing_data.frame(data4d)
 image(c)
-
 plot_missing(data4d, percent = FALSE)
 ```
+
+For Q4, we have 4 missing values in population, which results in 4 missing values in crude rate.

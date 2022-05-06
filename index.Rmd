@@ -11,10 +11,10 @@ site: bookdown::bookdown_site
 
 Questions:
 
-1. What are the top 5 causes of death in our mortality dataset compared to the top 10 causes of death online or in common sense?
+1. What are the top 5 causes of death in our mortality dataset and what is  top 5 states that have most deaths of these causes?
 
 2. What are the growth rates for these 5 causes of deaths for different identity groups in New York State for the previous 10 years?
 
 3. What is the top 5 cause of death and what is the spread of this disease in the U.S by state in 2020?
 
-4. What is the decision tree of locations, race, gender for top 1 causes of death?
+4. What is the relationship between (locations, race, gender, age) and top 1 causes of death?

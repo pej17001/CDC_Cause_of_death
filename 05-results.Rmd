@@ -1,6 +1,6 @@
 # Results
 
-## Question 1: What are the top 5 causes of death in our mortality dataset compared to the top 10 causes of death online or in common sense?
+## What are the top 5 causes of death in our mortality dataset and what is  top 5 states that have most deaths of these causes?
 
 ```{r}
 disease.split<-aggregate(Deaths~Cause.of.death,data=df,sum)
@@ -24,9 +24,8 @@ ggplot(S_death_dis, aes(x = State, y = Deaths, group = Cause.of.death),ordered=T
   coord_flip()
 ```
 
-The top five disease that lead to death is "COVID-19", "Atherosclerotic heart disease", "Bronchus or lung, unspecified - Malignant neoplasms", "Alzheimer disease, unspecified", "Chronic obstructive pulmonary disease, unspecified" .
-The top five state that have most death is California, Texas, Florida, New York, Pennsylvanina
-
+The top five diseases that lead to death are "COVID-19", "Atherosclerotic heart disease", "Bronchus or lung, unspecified - Malignant neoplasms", "Alzheimer disease, unspecified", "Chronic obstructive pulmonary disease, unspecified".
+The top five states that have the most death are California, Texas, Florida, New York, and Pennsylvania.
 
 ```{r}
 df$DeathRate<-df$Deaths/df$Population*100000
@@ -51,8 +50,8 @@ ggplot(S_death_dis, aes(x = State, y = DeathRate, group = Cause.of.death),ordere
   coord_flip()
 ```
 
-The top five disease that lead to highest death rate is "COVID-19", "Atherosclerotic heart disease", "Bronchus or lung, unspecified - Malignant neoplasms", "Alzheimer disease, unspecified", "Chronic obstructive pulmonary disease, unspecified", which is same as previous.
-The top five state that have most death is West Virginia, Mississippi, Alabama, Ohio, Pennsylvanina
+The top five diseases that lead to the highest death rate are "COVID-19", "Atherosclerotic heart disease", "Bronchus or lung, unspecified - Malignant neoplasms", and "Alzheimer disease, unspecified", "Chronic obstructive pulmonary disease, unspecified", which is the same as previous.
+The top five states that have the most death in West Virginia, Mississippi, Alabama, Ohio, and Pennsylvania.
 
 ## Question 2: What are the growth rates for these 5 causes of deaths for different identity groups in New York State for the previous 10 years?
 
@@ -77,7 +76,7 @@ data2b <- data2a[-c(1),]
 data2c <- data2b %>%
   group_by(Year) %>%
   slice(1:5)
-  
+
 # Draw the plot for Female
 ggplot(data2c, aes(Year, Rate, color = Cause.of.death)) + 
   geom_line() +
@@ -85,6 +84,8 @@ ggplot(data2c, aes(Year, Rate, color = Cause.of.death)) +
   scale_x_continuous(breaks = seq(2011, 2020, 1)) +
   ggtitle("5 top causes of death for Female from 2011 to 2020 in NY")
 ```
+
+For female, the top 5 causes of death are " Acute myocardial infarction, unspecified", "Atherosclerotic heart disease", "Bronchus or lung, unspecified - Malignant neoplasms", "Chronic obstructive pulmonary disease, unspecified ", and "Unspecified dementia". 
 
 ### Male top 5 causes of death trend
 
@@ -112,9 +113,10 @@ ggplot(data2f, aes(Year, Rate, color = Cause.of.death)) +
   scale_x_continuous(breaks = seq(2011,2020, 1)) +
   ggtitle("5 top causes of death for Male from 2011 to 2020 in NY")
 ```
+For male, the top 5 causes of deaths are "Acute myocardial infarction, unspecified ", "Atherosclerotic cardiovascular disease, so described ", "Atherosclerotic heart disease", "Bronchus or lung, unspecified - Malignant neoplasms", and "Chronic obstructive pulmonary disease, unspecified". 
 
 For both male and female, Atherosclerotic heart disease is the top one cause of death. For female, unspecified dementia was in an increasing trend in the past 10 years. For male, "Atherosclerotic cardiovascular disease, so described" was increasing drastically in year 2019 and 2020. Also, although death rate of  "Chronic obstructive pulmonary disease, unspecified
-M" is not as high as other top 4 causes of death, this still has above 20 per 100,000 of death rate, which all the humanbeings need to be careful about that.
+M" is not as high as other top 4 causes of death,  this still has above 20 per 100,000 of death rate, which all the human beings need to be careful about this disease.
 
 ## Question 3: What is the top 5 cause of death and what is the spread of this disease in the U.S by state in 2020?
 
@@ -160,9 +162,7 @@ state_choropleth(deathrate,
 
 The highest death and highest death rate is different.
 
-
-
-## Question 4: What is the decision tree of locations, race, gender for top 1 causes of death? 
+## Question 4: What is the relationship between (locations, race, gender, age) and top 1 causes of death?
 
 ### Find the top 1 cause of death: Atherosclerotic heart disease
 ```{r,warning=FALSE}
@@ -202,16 +202,38 @@ ggplot(data4c, aes(Year, Rate, color = Cause.of.death)) +
 # 10 years from 2011-2020.
 ```
 
+We found that Atherosclerotic heart disease is the top 1 cause of death in U.S for previous 10 years from 2011-2020, which crude rate is always above 50.
+
+### Create Mosaic Plot
+```{r}
+library(vcd)
+mosaic( Rate ~ Gender,data=data4f)
+mosaic(Rate ~ Age.Groups, data=data4f)
+mosaic(Rate ~ Census.Region, data=data4f)
+mosaic(Rate ~ Race, data=data4f)
+```
+From the mosaic plot above, we have several findings. First, Male tend to have a higher risk of this disease. Second, young people are less like to die because of this disease. Third, there is not much difference between census regions. Last, Black or African American and White are riskier for this disease.
+
+For Race variable, "AIOAN" is American Indian or Alaska Native, "AOPI" is Asian or Pacific Islander , "BOAA" is Black or African American.
+
 ### Build the decision tree based on previous finding
 
 ```{r}
 # Select the variables we need
 data4e$Rate <- (as.numeric(data4e$Deaths)/as.numeric(data4e$Population))*100000
 
-data4e$Rate <- ifelse(data4e$Rate <= 25, "Low", ifelse(data4e$Rate < 1000 & data4e$Rate > 25, "Medium", ifelse(data4e$Rate >= 1000, "High", NA)))
+data4e$Rate <- ifelse(data4e$Rate <= 25, "Low", ifelse(data4e$Rate < 500 & data4e$Rate > 25, "Medium", ifelse(data4e$Rate >= 500, "High", NA)))
 data4f <- data4e %>% select(c(Census.Region.Code,Ten.Year.Age.Groups.Code,	
-Gender.Code, Race,Rate))
-  
+Gender.Code, Race,Rate)) %>%
+  rename(Census.Region = Census.Region.Code) %>%
+  rename(Age.Groups = Ten.Year.Age.Groups.Code) %>%
+  rename(Gender = Gender.Code)
+
+
+data4f$Race <- ifelse(data4f$Race == "American Indian or Alaska Native", "AIOAN", ifelse(data4f$Race == "Black or African American", "BOAA", ifelse(data4f$Race == "Asian or Pacific Islander", "AOPI", "White")))
+
+
+data4f$Age.Groups <- ifelse(data4f$Age.Groups == "15-24"|data4f$Age.Groups == "25-34"|data4f$Age.Groups == "5-14", "Young-Aged", ifelse(data4f$Age.Groups == "35-44"|data4f$Age.Groups == "45-54"|data4f$Age.Groups == "55-64", "Middle-Aged", ifelse(data4f$Age.Groups == "65-74"|data4f$Age.Groups == "75-84"|data4f$Age.Groups == "85+", "Old-Aged", 0)))
 
 # Create train/test set
   
@@ -233,6 +255,10 @@ data4_test <- create_train_test(data4f, size = 0.8, train = FALSE)
 prop.table(table(data4_train$Rate))
 
 # Fit the model
-fit <- rpart(Rate~., data = data4_train, method = 'class')
-rpart.plot(fit, extra = 106)
+fit <- rpart(Rate~., data = data4_train)
+rpart.plot(fit, main="Decision tree for top 1 cause of death")
 ```
+
+From the decision plot above, each node (little rectangle with color) shows the predicted class, the predicted probability of each class, and the percentage of observations in the node.
+
+This decision tree results in the same results we got in the mosaic plots, in which male, Black or African American and White, and old people are riskier.

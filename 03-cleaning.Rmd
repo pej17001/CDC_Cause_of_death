@@ -66,4 +66,4 @@ data4e <- data4d %>% na.omit()
 head(data4e)
 ```
 
-Fot the data in Q4, we downloaded two datasets. First one "Final Project Q4.txt" only contains cause of death and it's death rate, which we used this dataset to find the top 1 causes of death. Then, we download the dataset "Final Project Q4 Full.txt" using filters cause of death, gender, census region, race,etc. We used the categorical variable from the filters to build the decision tree.
+For the data in Q4, we downloaded two datasets. The first one "Final Project Q4.txt" only contains the cause of death and its death rate, and we used this dataset to find the top 1 causes of death. Then, we download the dataset "Final Project Q4 Full.txt" using filters for the cause of death, gender, census region, race, etc. We used the categorical variable from the filters to build the decision tree.

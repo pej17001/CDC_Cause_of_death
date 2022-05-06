@@ -1,3 +1,35 @@
 # Interactive component
 
+## Time series interactive plot (Q2)
 
+### Female
+```{r}
+library(TSstudio)
+data2g <- data2c %>%
+  select(c(Year, Cause.of.death, Rate)) %>%
+  pivot_wider(names_from = Cause.of.death, values_from = Rate)
+
+data2g$Year <- as.character(data2g$Year)
+
+data2g$Year <- as.Date(data2g$Year,"%Y")
+ts_plot(data2g,slider=TRUE, 
+        title="5 top causes of death for Female from 2011 to 2020 in NY",
+        Xtitle = "Year",
+        Ytitle = "Crude rate")
+```
+### Male
+```{r}
+data2h <- data2f %>%
+  select(c(Year, Cause.of.death, Rate)) %>%
+  pivot_wider(names_from = Cause.of.death, values_from = Rate)
+
+data2h$Year <- as.character(data2h$Year)
+
+data2h$Year <- as.Date(data2h$Year,"%Y")
+ts_plot(data2h,slider=TRUE, 
+        title="5 top causes of death for Male from 2011 to 2020 in NY",
+        Xtitle = "Year",
+        Ytitle = "Crude rate")
+```
+
+Since our "Year" variable only has year instead of month, the pointed value would be "May XXXX". From the interactive plot, we are more possible to know the crude death rate for each year and look at the pattern for the part we want. For example, if we want to see the trend pattern and the crude rate from the year 2011 to 2014, compared to the traditional time series plot, the interactive time series plot can give us exactly what we want by pointing to the plot and moving the bar below the plot. 
